@@ -1,0 +1,43 @@
+-- 1. Select all columns from the employees table
+SELECT * 
+FROM employees;
+
+-- 2. Select specific columns: first_name, last_name, salary
+SELECT first_name, last_name, salary 
+FROM employees;
+
+-- 3. Use WHERE to filter employees in the 'Sales' department
+SELECT * 
+FROM employees 
+WHERE department = 'Sales';
+
+-- 4. Use WHERE with AND: employees in 'IT' with salary > 50000
+SELECT first_name, last_name, department, salary 
+FROM employees 
+WHERE department = 'IT' AND salary > 50000;
+
+-- 5. Use WHERE with OR: employees in 'HR' or with salary < 30000
+SELECT * 
+FROM employees 
+WHERE department = 'HR' OR salary < 30000;
+
+-- 6. Use LIKE: find employees whose first name starts with 'A'
+SELECT * 
+FROM employees 
+WHERE first_name LIKE 'A%';
+
+-- 7. Use BETWEEN: employees hired between 2020-01-01 and 2022-12-31
+SELECT * 
+FROM employees 
+WHERE hire_date BETWEEN '2020-01-01' AND '2022-12-31';
+
+-- 8. Use ORDER BY: list employees ordered by salary descending
+SELECT * 
+FROM employees 
+ORDER BY salary DESC;
+
+-- 9. Use ORDER BY and LIMIT: top 5 highest paid employees
+SELECT first_name, last_name, salary 
+FROM employees 
+ORDER BY salary DESC 
+LIMIT 5;
